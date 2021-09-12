@@ -120,7 +120,7 @@ const createDna = (_races, _race) => {
     let randElementNum = Math.floor(Math.random() * 500) + 1;
     let num = 0;
     layer.elements.forEach((element) => {
-      if (randElementNum >= 500 - element.weight) {
+      if (randElementNum >= 500  - element.weight) {
         num = element.id;
       }
     });
