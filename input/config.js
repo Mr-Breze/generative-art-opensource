@@ -83,7 +83,10 @@ const races = {
             weight: 10, //2%
           },
         ],
-      
+        position: { x: 0, y: 0 },
+        size: { width: width, height: height },
+      },
+      {
         name: "Body",
         elements: [
           {
@@ -147,7 +150,10 @@ const races = {
             weight: 10, //2%
           },
         ],
-
+        position: { x: 0, y: 0 },
+        size: { width: width, height: height },
+      },
+      {
         name: "Eyes",
         elements: [
           {
@@ -355,7 +361,10 @@ const races = {
             weight: 5, //1%
           },
         ],
-        
+        position: { x: 0, y: 0 },
+        size: { width: width, height: height },
+      },
+      {
         name: "Top",
         elements: [
           {

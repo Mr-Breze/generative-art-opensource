@@ -12,6 +12,7 @@ const {
   raceWeights,
 } = require("./input/config.js");
 const console = require("console");
+const { exit } = require("process");
 const canvas = createCanvas(width, height);
 const ctx = canvas.getContext("2d");
 var metadataList = [];
@@ -116,17 +117,18 @@ const isDnaUnique = (_DnaList = [], _dna = []) => {
 
 const createDna = (_races, _race) => {
   let randNum = [];
+
   _races[_race].layers.forEach((layer) => {
     let randElementNum = Math.floor(Math.random() * 100) + 1;
     let num = 0;
     layer.elements.forEach((element) => {
-      if (randElementNum >= 100  - element.weight) {
+      if (randElementNum >= 500  - element.weight) {
         num = element.id;
       }
+
     });
     randNum.push(num);
   });
-  console.log(randNum)
   return randNum;
 };
 
@@ -157,7 +159,6 @@ const startCreating = async () => {
 
       await Promise.all(loadedElements).then((elementArray) => {
         ctx.clearRect(0, 0, width, height);
-        // drawBackground();
         elementArray.forEach((element) => {
           drawElement(element);
         });
