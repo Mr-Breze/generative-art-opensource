@@ -117,15 +117,16 @@ const isDnaUnique = (_DnaList = [], _dna = []) => {
 const createDna = (_races, _race) => {
   let randNum = [];
   _races[_race].layers.forEach((layer) => {
-    let randElementNum = Math.floor(Math.random() * 500) + 1;
+    let randElementNum = Math.floor(Math.random() * 100) + 1;
     let num = 0;
     layer.elements.forEach((element) => {
-      if (randElementNum >= 500  - element.weight) {
+      if (randElementNum >= 100  - element.weight) {
         num = element.id;
       }
     });
     randNum.push(num);
   });
+  console.log(randNum)
   return randNum;
 };
 
